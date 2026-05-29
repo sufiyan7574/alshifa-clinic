@@ -3,893 +3,791 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alshifa Clinic | Herbal Gynaecology & Infertility Care</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Alshifa Clinic | Herbal Gynaecology & Infertility Care · Veraval</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --forest: #1a3a2a;
-    --sage: #2d5a3d;
-    --mint: #4a8c5c;
-    --gold: #c9a84c;
-    --gold-light: #e8c96a;
-    --cream: #faf6ee;
-    --warm-white: #fff9f0;
-    --text-dark: #0f1f17;
-    --text-mid: #3a5248;
-    --text-light: #7a9a88;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Jost', sans-serif;
-    background: var(--cream);
-    color: var(--text-dark);
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    padding: 18px 48px;
-    display: flex; align-items: center; justify-content: space-between;
-    background: rgba(250,246,238,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-  }
-  .nav-logo {
-    display: flex; align-items: center; gap: 12px;
-  }
-  .nav-logo-icon {
-    width: 40px; height: 40px;
-    background: var(--forest);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
-  }
-  .nav-logo-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px; font-weight: 600;
-    color: var(--forest);
-    letter-spacing: 0.5px;
-  }
-  .nav-logo-sub {
-    font-size: 10px; font-weight: 400;
-    color: var(--text-light);
-    letter-spacing: 2px; text-transform: uppercase;
-  }
-  .nav-links {
-    display: flex; gap: 36px; list-style: none;
-  }
-  .nav-links a {
-    font-size: 13px; font-weight: 500; letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--text-mid);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    background: var(--forest);
-    color: var(--gold-light) !important;
-    padding: 10px 24px;
-    border-radius: 2px;
-    font-size: 12px !important;
-    letter-spacing: 2px !important;
-    transition: background 0.3s !important;
-  }
-  .nav-cta:hover { background: var(--sage) !important; color: var(--gold-light) !important; }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-left {
-    padding: 80px 60px 80px 80px;
-    display: flex; flex-direction: column; justify-content: center;
-    position: relative; z-index: 2;
-  }
-
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.35);
-    padding: 6px 16px; border-radius: 100px;
-    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-    color: #8a6a20; font-weight: 500;
-    margin-bottom: 28px;
-    width: fit-content;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  .hero-badge::before {
-    content: '🌿';
-    font-size: 13px;
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(42px, 5vw, 68px);
-    font-weight: 300;
-    line-height: 1.1;
-    color: var(--forest);
-    margin-bottom: 8px;
-    animation: fadeUp 0.8s 0.1s ease both;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--mint);
-  }
-
-  .hero-title-line2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(42px, 5vw, 68px);
-    font-weight: 600;
-    color: var(--forest);
-    line-height: 1.1;
-    margin-bottom: 28px;
-    animation: fadeUp 0.8s 0.2s ease both;
-  }
-
-  .hero-desc {
-    font-size: 16px; line-height: 1.8;
-    color: var(--text-mid);
-    max-width: 420px;
-    margin-bottom: 44px;
-    animation: fadeUp 0.8s 0.3s ease both;
-    font-weight: 300;
-  }
-
-  .hero-actions {
-    display: flex; gap: 16px; align-items: center;
-    animation: fadeUp 0.8s 0.4s ease both;
-  }
-
-  .btn-primary {
-    background: var(--forest);
-    color: var(--gold-light);
-    padding: 16px 36px;
-    border: none; border-radius: 2px;
-    font-family: 'Jost', sans-serif;
-    font-size: 13px; font-weight: 500;
-    letter-spacing: 2px; text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s;
-    position: relative; overflow: hidden;
-  }
-  .btn-primary::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: var(--gold);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,58,42,0.25); }
-  .btn-primary:hover::after { opacity: 0.15; }
-
-  .btn-secondary {
-    color: var(--forest);
-    font-size: 13px; font-weight: 500;
-    letter-spacing: 1px;
-    text-decoration: none;
-    display: flex; align-items: center; gap: 8px;
-    transition: gap 0.3s;
-  }
-  .btn-secondary:hover { gap: 12px; }
-  .btn-secondary::after { content: '→'; font-size: 16px; }
-
-  .hero-right {
-    position: relative;
-    background: linear-gradient(135deg, var(--forest) 0%, var(--sage) 60%, var(--mint) 100%);
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-right::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image:
-      radial-gradient(circle at 30% 20%, rgba(201,168,76,0.15) 0%, transparent 50%),
-      radial-gradient(circle at 70% 80%, rgba(255,255,255,0.05) 0%, transparent 40%);
-  }
-
-  .hero-visual {
-    position: relative; z-index: 2;
-    text-align: center; padding: 60px;
-  }
-
-  .hero-plant {
-    font-size: 120px;
-    line-height: 1;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
-    animation: float 6s ease-in-out infinite;
-    display: block;
-    margin-bottom: 32px;
-  }
-
-  .hero-tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    color: rgba(255,255,255,0.9);
-    font-style: italic;
-    font-weight: 300;
-    line-height: 1.5;
-  }
-
-  .hero-tagline span {
-    color: var(--gold-light);
-    font-weight: 600;
-  }
-
-  .hero-stats {
-    display: flex; gap: 0;
-    margin-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    padding-top: 32px;
-  }
-
-  .hero-stat {
-    flex: 1;
-    padding: 0 24px;
-    border-right: 1px solid rgba(255,255,255,0.15);
-    text-align: center;
-  }
-  .hero-stat:last-child { border-right: none; }
-
-  .hero-stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px; font-weight: 600;
-    color: var(--gold-light);
-    display: block;
-  }
-
-  .hero-stat-label {
-    font-size: 11px; letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.6);
-    margin-top: 4px;
-    display: block;
-  }
-
-  /* ── SCROLL LINE ── */
-  .divider {
-    width: 1px; height: 80px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-    margin: 0 auto;
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  /* ── DOCTORS ── */
-  .section {
-    padding: 100px 80px;
-  }
-
-  .section-label {
-    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 16px;
-    display: block;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 4vw, 52px);
-    font-weight: 400;
-    color: var(--forest);
-    line-height: 1.2;
-    margin-bottom: 60px;
-  }
-
-  .section-title em { font-style: italic; color: var(--mint); }
-
-  .doctors-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-
-  .doctor-card {
-    background: var(--warm-white);
-    border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 4px;
-    padding: 48px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.4s, box-shadow 0.4s;
-  }
-
-  .doctor-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--forest), var(--gold));
-  }
-
-  .doctor-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 60px rgba(26,58,42,0.12);
-  }
-
-  .doctor-icon {
-    width: 72px; height: 72px;
-    background: linear-gradient(135deg, var(--forest), var(--sage));
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 30px;
-    margin-bottom: 24px;
-  }
-
-  .doctor-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px; font-weight: 600;
-    color: var(--forest);
-    margin-bottom: 4px;
-  }
-
-  .doctor-qual {
-    font-size: 12px; letter-spacing: 1.5px;
-    color: var(--gold);
-    text-transform: uppercase; font-weight: 500;
-    margin-bottom: 16px;
-  }
-
-  .doctor-spec {
-    font-size: 15px; color: var(--text-mid);
-    line-height: 1.7; font-weight: 300;
-    margin-bottom: 24px;
-  }
-
-  .doctor-tags {
-    display: flex; flex-wrap: wrap; gap: 8px;
-  }
-
-  .tag {
-    background: rgba(26,58,42,0.06);
-    border: 1px solid rgba(26,58,42,0.12);
-    padding: 5px 14px; border-radius: 100px;
-    font-size: 11px; letter-spacing: 0.5px;
-    color: var(--text-mid);
-  }
-
-  /* ── CONDITIONS ── */
-  .conditions-section {
-    padding: 100px 80px;
-    background: var(--forest);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .conditions-section::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
-  }
-
-  .conditions-section .section-label { color: var(--gold-light); }
-  .conditions-section .section-title { color: white; margin-bottom: 48px; }
-
-  .conditions-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-
-  .condition-item {
-    padding: 36px 32px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.07);
-    transition: background 0.3s;
-    cursor: default;
-  }
-
-  .condition-item:hover {
-    background: rgba(201,168,76,0.08);
-    border-color: rgba(201,168,76,0.2);
-  }
-
-  .condition-icon { font-size: 32px; margin-bottom: 16px; display: block; }
-
-  .condition-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px; font-weight: 600;
-    color: white; margin-bottom: 8px;
-  }
-
-  .condition-desc {
-    font-size: 13px; color: rgba(255,255,255,0.5);
-    line-height: 1.6; font-weight: 300;
-  }
-
-  /* ── WHY US ── */
-  .why-section {
-    padding: 100px 80px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .why-left .section-title { margin-bottom: 24px; }
-
-  .why-desc {
-    font-size: 16px; line-height: 1.8;
-    color: var(--text-mid); font-weight: 300;
-    margin-bottom: 40px;
-  }
-
-  .why-points {
-    display: flex; flex-direction: column; gap: 20px;
-  }
-
-  .why-point {
-    display: flex; gap: 16px; align-items: flex-start;
-  }
-
-  .why-point-icon {
-    width: 40px; height: 40px; min-width: 40px;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.25);
-    border-radius: 2px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
-  }
-
-  .why-point-text h4 {
-    font-size: 15px; font-weight: 500;
-    color: var(--forest); margin-bottom: 4px;
-  }
-
-  .why-point-text p {
-    font-size: 13px; color: var(--text-light);
-    line-height: 1.6; font-weight: 300;
-  }
-
-  .why-right {
-    background: linear-gradient(135deg, var(--sage), var(--forest));
-    border-radius: 4px;
-    padding: 60px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .why-right::before {
-    content: '🌿';
-    position: absolute;
-    font-size: 200px;
-    opacity: 0.06;
-    bottom: -40px; right: -40px;
-    line-height: 1;
-  }
-
-  .why-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    color: white;
-    line-height: 1.5;
-    font-style: italic;
-    font-weight: 300;
-    margin-bottom: 32px;
-    position: relative; z-index: 1;
-  }
-
-  .why-quote::before {
-    content: '"';
-    font-size: 80px;
-    color: var(--gold);
-    opacity: 0.4;
-    position: absolute;
-    top: -20px; left: -10px;
-    line-height: 1;
-    font-style: normal;
-  }
-
-  .why-quote-author {
-    font-size: 13px; letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    position: relative; z-index: 1;
-  }
-
-  /* ── PROCESS ── */
-  .process-section {
-    padding: 100px 80px;
-    background: var(--warm-white);
-  }
-
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    margin-top: 60px;
-    position: relative;
-  }
-
-  .process-steps::before {
-    content: '';
-    position: absolute;
-    top: 32px; left: 12.5%; right: 12.5%;
-    height: 1px;
-    background: linear-gradient(90deg, var(--gold), var(--mint), var(--gold));
-    opacity: 0.4;
-  }
-
-  .process-step {
-    padding: 0 32px;
-    text-align: center;
-  }
-
-  .step-num {
-    width: 64px; height: 64px;
-    border-radius: 50%;
-    background: white;
-    border: 2px solid var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 24px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 600;
-    color: var(--forest);
-    position: relative; z-index: 1;
-  }
-
-  .step-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px; font-weight: 600;
-    color: var(--forest); margin-bottom: 10px;
-  }
-
-  .step-desc {
-    font-size: 13px; color: var(--text-light);
-    line-height: 1.7; font-weight: 300;
-  }
-
-  /* ── TESTIMONIAL ── */
-  .testimonial-section {
-    padding: 100px 80px;
-    background: var(--forest);
-    text-align: center;
-  }
-
-  .testimonial-section .section-label { color: var(--gold-light); }
-
-  .testimonial-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(24px, 3.5vw, 42px);
-    color: white;
-    font-style: italic;
-    font-weight: 300;
-    max-width: 800px;
-    margin: 0 auto 32px;
-    line-height: 1.5;
-  }
-
-  .testimonial-stars {
-    font-size: 20px; margin-bottom: 12px;
-    color: var(--gold-light);
-  }
-
-  .testimonial-author {
-    font-size: 13px; letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-  }
-
-  /* ── LOCATION ── */
-  .location-section {
-    padding: 100px 80px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .location-details {
-    display: flex; flex-direction: column; gap: 28px;
-    margin-top: 40px;
-  }
-
-  .location-item {
-    display: flex; gap: 20px; align-items: flex-start;
-  }
-
-  .location-item-icon {
-    width: 48px; height: 48px; min-width: 48px;
-    background: var(--forest);
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 2px;
-    font-size: 20px;
-  }
-
-  .location-item-text h4 {
-    font-size: 13px; letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--text-light); margin-bottom: 4px;
-  }
-
-  .location-item-text p {
-    font-size: 17px; color: var(--forest);
-    font-weight: 400; line-height: 1.5;
-  }
-
-  .map-placeholder {
-    background: linear-gradient(135deg, var(--forest) 0%, var(--sage) 100%);
-    border-radius: 4px;
-    aspect-ratio: 1;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 16px;
-    color: white;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .map-placeholder::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(201,168,76,0.1), transparent 70%);
-  }
-
-  .map-pin { font-size: 60px; z-index: 1; animation: float 4s ease-in-out infinite; }
-
-  .map-text {
-    z-index: 1;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-style: italic; color: rgba(255,255,255,0.8);
-  }
-
-  .map-city {
-    font-size: 13px; letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    z-index: 1;
-  }
-
-  /* ── CTA ── */
-  .cta-section {
-    padding: 100px 80px;
-    background: linear-gradient(135deg, #0f1f17, var(--forest));
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-section::before {
-    content: '☘';
-    position: absolute;
-    font-size: 400px;
-    opacity: 0.03;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1;
-  }
-
-  .cta-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 5vw, 64px);
-    color: white;
-    font-weight: 300;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    position: relative; z-index: 1;
-  }
-
-  .cta-title em { font-style: italic; color: var(--gold-light); }
-
-  .cta-subtitle {
-    font-size: 16px; color: rgba(255,255,255,0.6);
-    margin-bottom: 48px; font-weight: 300;
-    position: relative; z-index: 1;
-  }
-
-  .cta-buttons {
-    display: flex; gap: 20px;
-    justify-content: center; align-items: center;
-    position: relative; z-index: 1;
-    flex-wrap: wrap;
-  }
-
-  .btn-gold {
-    background: var(--gold);
-    color: var(--forest);
-    padding: 18px 48px;
-    border: none; border-radius: 2px;
-    font-family: 'Jost', sans-serif;
-    font-size: 13px; font-weight: 600;
-    letter-spacing: 2px; text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s;
-  }
-  .btn-gold:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(201,168,76,0.35);
-  }
-
-  .btn-outline-white {
-    border: 1px solid rgba(255,255,255,0.3);
-    color: white;
-    padding: 18px 48px;
-    border-radius: 2px;
-    font-family: 'Jost', sans-serif;
-    font-size: 13px; font-weight: 500;
-    letter-spacing: 2px; text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s;
-  }
-  .btn-outline-white:hover {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.5);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #0a1510;
-    padding: 60px 80px 32px;
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 60px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .footer-brand-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px; font-weight: 600;
-    color: white; margin-bottom: 8px;
-  }
-
-  .footer-brand-tag {
-    font-size: 12px; color: var(--gold);
-    letter-spacing: 2px; text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .footer-brand-desc {
-    font-size: 14px; color: rgba(255,255,255,0.4);
-    line-height: 1.7; font-weight: 300;
-    max-width: 300px;
-  }
-
-  .footer-col h5 {
-    font-size: 11px; letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-  }
-
-  .footer-col ul { list-style: none; }
-  .footer-col ul li { margin-bottom: 10px; }
-  .footer-col ul li a {
-    font-size: 14px; color: rgba(255,255,255,0.45);
-    text-decoration: none; font-weight: 300;
-    transition: color 0.3s;
-  }
-  .footer-col ul li a:hover { color: white; }
-
-  .footer-bottom {
-    display: flex; justify-content: space-between; align-items: center;
-    padding-top: 28px;
-  }
-
-  .footer-copy {
-    font-size: 12px; color: rgba(255,255,255,0.25);
-    letter-spacing: 0.5px;
-  }
-
-  .footer-tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: rgba(255,255,255,0.25);
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 900px) {
-    nav { padding: 16px 24px; }
-    .nav-links { display: none; }
-
-    .hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 60px 24px 40px; }
-    .hero-right { min-height: 360px; }
-
-    .section,
-    .conditions-section,
-    .why-section,
-    .process-section,
-    .testimonial-section,
-    .location-section,
-    .cta-section { padding: 60px 24px; }
-
-    .doctors-grid { grid-template-columns: 1fr; }
-    .conditions-grid { grid-template-columns: 1fr 1fr; }
-    .why-section,
-    .location-section { grid-template-columns: 1fr; gap: 40px; }
-    .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
-    .process-steps::before { display: none; }
-    .footer-top { grid-template-columns: 1fr; gap: 32px; }
-    footer { padding: 48px 24px 24px; }
-    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-  }
+:root {
+  --forest: #1a3a2a;
+  --sage: #2d5a3d;
+  --mint: #4a8c5c;
+  --gold: #c9a84c;
+  --gold-light: #e8c96a;
+  --gold-pale: rgba(201,168,76,0.12);
+  --cream: #faf6ee;
+  --warm-white: #fff9f2;
+  --text-dark: #0f1f17;
+  --text-mid: #3a5248;
+  --text-light: #7a9a88;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ── CURSOR ── */
+.cursor {
+  width: 10px; height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed; pointer-events: none;
+  z-index: 9999; transform: translate(-50%,-50%);
+  transition: width .3s, height .3s, background .3s;
+  mix-blend-mode: multiply;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  position: fixed; pointer-events: none;
+  z-index: 9998; transform: translate(-50%,-50%);
+  transition: all .15s ease;
+  opacity: 0.6;
+}
+
+/* ── LOADER ── */
+#loader {
+  position: fixed; inset: 0; z-index: 9000;
+  background: var(--forest);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 20px;
+}
+.loader-plant {
+  font-size: 56px;
+  animation: loaderSpin 1.5s ease-in-out infinite alternate;
+}
+.loader-bar-wrap {
+  width: 200px; height: 2px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px; overflow: hidden;
+}
+.loader-bar {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 2px;
+  animation: loadBar 1.8s ease forwards;
+}
+.loader-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+@keyframes loaderSpin {
+  from { transform: rotate(-10deg) scale(0.9); }
+  to   { transform: rotate(10deg)  scale(1.1); }
+}
+@keyframes loadBar {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 500;
+  padding: 20px 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all 0.4s ease;
+}
+nav.scrolled {
+  padding: 14px 60px;
+  background: rgba(250,246,238,0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(201,168,76,0.2);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo-icon {
+  width: 42px; height: 42px;
+  background: var(--forest);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px;
+  transition: transform 0.3s;
+}
+.nav-logo:hover .nav-logo-icon { transform: rotate(15deg); }
+.nav-logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--forest); line-height: 1.1;
+}
+.nav-logo-sub {
+  font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: 12px; letter-spacing: 1.5px;
+  text-transform: uppercase; font-weight: 500;
+  color: var(--text-mid); text-decoration: none;
+  position: relative; padding-bottom: 2px;
+  transition: color 0.3s;
+}
+.nav-links a::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--forest); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--forest) !important;
+  color: var(--gold-light) !important;
+  padding: 11px 26px;
+  border-radius: 2px;
+  letter-spacing: 1.5px !important;
+  transition: all 0.3s !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--sage) !important; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,58,42,0.25); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; overflow: hidden;
+}
+.hero-bg-lines {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(26,58,42,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,58,42,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-left {
+  padding: 140px 60px 80px 80px;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; z-index: 2;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(201,168,76,0.4);
+  background: var(--gold-pale);
+  padding: 7px 18px; border-radius: 100px;
+  font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: #8a6a20;
+  font-weight: 500; width: fit-content;
+  margin-bottom: 32px;
+  opacity: 0; transform: translateY(30px);
+  animation: revealUp 0.9s 0.3s ease forwards;
+}
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(46px, 5.5vw, 76px);
+  font-weight: 300; line-height: 1.05;
+  color: var(--forest);
+  opacity: 0; transform: translateY(40px);
+  animation: revealUp 0.9s 0.5s ease forwards;
+}
+.hero-h1 em { font-style: italic; color: var(--mint); }
+.hero-h1 strong {
+  font-weight: 700; display: block;
+  background: linear-gradient(135deg, var(--forest), var(--mint));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-line {
+  width: 60px; height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 28px 0;
+  opacity: 0; animation: revealUp 0.9s 0.7s ease forwards;
+}
+.hero-desc {
+  font-size: 16px; line-height: 1.85;
+  color: var(--text-mid); font-weight: 300;
+  max-width: 400px; margin-bottom: 44px;
+  opacity: 0; transform: translateY(30px);
+  animation: revealUp 0.9s 0.8s ease forwards;
+}
+.hero-actions {
+  display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+  opacity: 0; transform: translateY(30px);
+  animation: revealUp 0.9s 1s ease forwards;
+}
+.btn-primary {
+  background: var(--forest);
+  color: var(--gold-light);
+  padding: 17px 40px;
+  border: none; border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  position: relative; overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transition: left 0.5s;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(26,58,42,0.3); }
+.btn-primary:hover::before { left: 100%; }
+.btn-ghost {
+  color: var(--forest);
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 17px 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+.btn-ghost:hover { gap: 14px; border-bottom-color: var(--gold); color: var(--sage); }
+
+/* HERO RIGHT */
+.hero-right {
+  background: linear-gradient(145deg, var(--forest) 0%, #0f2318 100%);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-right::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 20%, rgba(201,168,76,0.12), transparent),
+    radial-gradient(ellipse 40% 60% at 70% 80%, rgba(74,140,92,0.1), transparent);
+}
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.hero-orb-1 {
+  width: 300px; height: 300px;
+  background: rgba(201,168,76,0.08);
+  top: 10%; left: 20%;
+}
+.hero-orb-2 {
+  width: 200px; height: 200px;
+  background: rgba(74,140,92,0.12);
+  bottom: 20%; right: 15%;
+  animation-delay: -4s;
+}
+.hero-card {
+  position: relative; z-index: 2;
+  padding: 60px 50px; text-align: center;
+  opacity: 0; transform: scale(0.9);
+  animation: revealScale 1.1s 0.6s ease forwards;
+}
+.hero-plant-wrap {
+  font-size: 100px; line-height: 1;
+  margin-bottom: 28px;
+  display: inline-block;
+  animation: plantFloat 7s ease-in-out infinite;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+}
+.hero-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  font-style: italic; line-height: 1.5;
+  margin-bottom: 8px;
+}
+.hero-card-title span { color: var(--gold-light); font-weight: 600; }
+.hero-stats {
+  display: flex; gap: 0;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 32px;
+}
+.hero-stat { flex: 1; padding: 0 20px; border-right: 1px solid rgba(255,255,255,0.08); }
+.hero-stat:last-child { border-right: none; }
+.hero-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px; font-weight: 700;
+  color: var(--gold-light); display: block;
+  line-height: 1;
+}
+.hero-stat-lbl {
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  display: block; margin-top: 6px;
+}
+
+/* ── SCROLL INDICATOR ── */
+.scroll-ind {
+  position: absolute; bottom: 40px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: revealUp 1s 1.5s ease forwards;
+}
+.scroll-line {
+  width: 1px; height: 60px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+.scroll-text {
+  font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--text-light);
+}
+
+/* ── REVEAL CLASSES (JS-driven) ── */
+.reveal {
+  opacity: 0; transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1; transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0; transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  opacity: 0; transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale {
+  opacity: 0; transform: scale(0.92);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* stagger children */
+.stagger > * {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.stagger.visible > *:nth-child(1) { opacity:1; transform:translateY(0); transition-delay: 0s; }
+.stagger.visible > *:nth-child(2) { opacity:1; transform:translateY(0); transition-delay: 0.12s; }
+.stagger.visible > *:nth-child(3) { opacity:1; transform:translateY(0); transition-delay: 0.24s; }
+.stagger.visible > *:nth-child(4) { opacity:1; transform:translateY(0); transition-delay: 0.36s; }
+.stagger.visible > *:nth-child(5) { opacity:1; transform:translateY(0); transition-delay: 0.48s; }
+.stagger.visible > *:nth-child(6) { opacity:1; transform:translateY(0); transition-delay: 0.6s; }
+
+/* ── SECTION BASE ── */
+.section-wrap { padding: 110px 80px; }
+.section-label {
+  font-size: 10px; letter-spacing: 3.5px;
+  text-transform: uppercase; color: var(--gold);
+  font-weight: 500; display: block; margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 400; color: var(--forest);
+  line-height: 1.15; margin-bottom: 56px;
+}
+.section-title em { font-style: italic; color: var(--mint); }
+
+/* ── DOCTORS ── */
+.doctors-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.doctor-card {
+  background: var(--warm-white);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 3px; padding: 52px 48px;
+  position: relative; overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s ease;
+  cursor: default;
+}
+.doctor-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--forest), var(--gold), var(--mint));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.5s ease;
+}
+.doctor-card:hover { transform: translateY(-8px); box-shadow: 0 28px 70px rgba(26,58,42,0.13); }
+.doctor-card:hover::before { transform: scaleX(1); }
+.doctor-avatar {
+  width: 76px; height: 76px;
+  background: linear-gradient(135deg, var(--forest), var(--sage));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 32px; margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(26,58,42,0.2);
+}
+.doctor-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px; font-weight: 600; color: var(--forest); margin-bottom: 4px;
+}
+.doctor-qual {
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold); font-weight: 500;
+  margin-bottom: 18px;
+}
+.doctor-bio { font-size: 15px; color: var(--text-mid); line-height: 1.75; font-weight: 300; margin-bottom: 24px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  background: rgba(26,58,42,0.06);
+  border: 1px solid rgba(26,58,42,0.1);
+  padding: 5px 14px; border-radius: 100px;
+  font-size: 11px; color: var(--text-mid);
+  transition: all 0.3s;
+}
+.tag:hover { background: rgba(26,58,42,0.12); }
+
+/* ── CONDITIONS ── */
+.conditions-wrap {
+  padding: 110px 80px;
+  background: var(--forest);
+  position: relative; overflow: hidden;
+}
+.conditions-wrap .section-label { color: rgba(232,201,106,0.7); }
+.conditions-wrap .section-title { color: white; }
+.conditions-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,76,0.05), transparent);
+}
+.conditions-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.condition-card {
+  padding: 40px 32px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.4s ease; cursor: default;
+  position: relative; overflow: hidden;
+}
+.condition-card::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--mint));
+  transform: scaleX(0); transition: transform 0.4s ease;
+}
+.condition-card:hover { background: rgba(201,168,76,0.07); border-color: rgba(201,168,76,0.18); }
+.condition-card:hover::after { transform: scaleX(1); }
+.condition-icon { font-size: 36px; margin-bottom: 18px; display: block; }
+.condition-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600; color: white; margin-bottom: 10px;
+}
+.condition-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.65; font-weight: 300; }
+
+/* ── WHY ── */
+.why-wrap { padding: 110px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+.why-points { display: flex; flex-direction: column; gap: 24px; margin-top: 36px; }
+.why-point {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 20px; border-radius: 3px;
+  border: 1px solid transparent;
+  transition: all 0.4s ease; cursor: default;
+}
+.why-point:hover { background: var(--warm-white); border-color: rgba(201,168,76,0.2); transform: translateX(6px); }
+.why-icon {
+  width: 44px; height: 44px; min-width: 44px;
+  background: var(--gold-pale);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 3px; display: flex; align-items: center; justify-content: center;
+  font-size: 19px; transition: background 0.3s;
+}
+.why-point:hover .why-icon { background: rgba(201,168,76,0.2); }
+.why-text h4 { font-size: 15px; font-weight: 500; color: var(--forest); margin-bottom: 5px; }
+.why-text p { font-size: 13px; color: var(--text-light); line-height: 1.65; font-weight: 300; }
+
+.why-quote-box {
+  background: linear-gradient(145deg, var(--sage), var(--forest));
+  border-radius: 4px; padding: 64px 56px;
+  position: relative; overflow: hidden;
+}
+.why-quote-box::before {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.1), transparent 70%);
+}
+.big-quote {
+  font-size: 100px; line-height: 0.8;
+  color: var(--gold); opacity: 0.25;
+  font-family: 'Cormorant Garamond', serif;
+  display: block; margin-bottom: 8px;
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; color: white; font-style: italic;
+  font-weight: 300; line-height: 1.55; margin-bottom: 28px;
+  position: relative; z-index: 1;
+}
+.quote-author {
+  font-size: 11px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold-light);
+  position: relative; z-index: 1;
+}
+
+/* ── PROCESS ── */
+.process-wrap { padding: 110px 80px; background: var(--warm-white); }
+.process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 64px; position: relative; }
+.process-grid::before {
+  content: ''; position: absolute;
+  top: 36px; left: 12.5%; right: 12.5%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--mint), var(--gold), transparent);
+  opacity: 0.35;
+}
+.process-step { padding: 0 28px; text-align: center; }
+.step-circle {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: white; border: 1.5px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 600; color: var(--forest);
+  position: relative; z-index: 1;
+  box-shadow: 0 4px 16px rgba(201,168,76,0.2);
+  transition: all 0.4s ease;
+}
+.process-step:hover .step-circle {
+  background: var(--forest); color: var(--gold-light);
+  transform: scale(1.1); box-shadow: 0 8px 28px rgba(26,58,42,0.25);
+}
+.step-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--forest); margin-bottom: 10px; }
+.step-desc { font-size: 13px; color: var(--text-light); line-height: 1.7; font-weight: 300; }
+
+/* ── TESTIMONIAL ── */
+.testi-wrap {
+  padding: 110px 80px;
+  background: var(--forest);
+  text-align: center; position: relative; overflow: hidden;
+}
+.testi-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(201,168,76,0.06), transparent);
+}
+.testi-wrap .section-label { color: var(--gold-light); }
+.testi-stars { font-size: 22px; color: var(--gold-light); margin-bottom: 28px; letter-spacing: 4px; }
+.testi-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 3.5vw, 40px);
+  color: white; font-style: italic; font-weight: 300;
+  max-width: 780px; margin: 0 auto 32px;
+  line-height: 1.55; position: relative; z-index: 1;
+}
+.testi-author {
+  font-size: 11px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+}
+
+/* ── LOCATION ── */
+.location-wrap { padding: 110px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.location-items { display: flex; flex-direction: column; gap: 26px; margin-top: 40px; }
+.loc-item { display: flex; gap: 20px; align-items: flex-start; }
+.loc-icon {
+  width: 52px; height: 52px; min-width: 52px;
+  background: var(--forest); border-radius: 3px;
+  display: flex; align-items: center; justify-content: center; font-size: 21px;
+}
+.loc-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+.loc-val { font-size: 17px; color: var(--forest); font-weight: 400; line-height: 1.5; }
+.map-box {
+  background: linear-gradient(145deg, var(--forest), var(--sage));
+  border-radius: 4px; aspect-ratio: 1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 14px; position: relative; overflow: hidden;
+}
+.map-box::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(201,168,76,0.1), transparent 65%);
+}
+.map-pin-icon { font-size: 64px; z-index: 1; animation: plantFloat 5s ease-in-out infinite; }
+.map-clinic { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: rgba(255,255,255,0.85); z-index: 1; }
+.map-city-name { font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold-light); z-index: 1; }
+
+/* ── CTA ── */
+.cta-wrap {
+  padding: 120px 80px;
+  background: linear-gradient(145deg, #0b1a10, var(--forest));
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-wrap::before {
+  content: '🌿'; position: absolute;
+  font-size: 500px; opacity: 0.025;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  pointer-events: none; line-height: 1;
+  animation: slowRotate 30s linear infinite;
+}
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5.5vw, 70px);
+  color: white; font-weight: 300; line-height: 1.15;
+  margin-bottom: 20px; position: relative; z-index: 1;
+}
+.cta-title em { font-style: italic; color: var(--gold-light); }
+.cta-sub { font-size: 16px; color: rgba(255,255,255,0.5); margin-bottom: 52px; font-weight: 300; position: relative; z-index: 1; }
+.cta-btns { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+.btn-gold {
+  background: var(--gold); color: var(--forest);
+  padding: 18px 52px; border: none; border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: all 0.35s ease;
+}
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(201,168,76,0.4); }
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white; padding: 18px 52px; border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: all 0.35s ease;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.5); transform: translateY(-3px); }
+
+/* ── FOOTER ── */
+footer { background: #080f0b; padding: 72px 80px 36px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 64px; padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: white; margin-bottom: 6px; }
+.footer-brand-tag { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+.footer-brand-desc { font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.75; font-weight: 300; max-width: 280px; }
+.footer-col h5 { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 12px; }
+.footer-col a { font-size: 14px; color: rgba(255,255,255,0.4); text-decoration: none; font-weight: 300; transition: color 0.3s; }
+.footer-col a:hover { color: white; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 30px; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+.footer-phi { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: rgba(255,255,255,0.2); }
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 400;
+  width: 58px; height: 58px;
+  background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; text-decoration: none;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+  transition: all 0.3s ease;
+  animation: waEntrance 1s 2s ease both;
+}
+.wa-float:hover { transform: scale(1.12) translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,0.5); }
+@keyframes waEntrance {
+  from { opacity:0; transform: scale(0); }
+  to   { opacity:1; transform: scale(1); }
+}
+
+/* ── KEYFRAMES ── */
+@keyframes revealUp {
+  from { opacity:0; transform: translateY(30px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+@keyframes revealScale {
+  from { opacity:0; transform: scale(0.9); }
+  to   { opacity:1; transform: scale(1); }
+}
+@keyframes plantFloat {
+  0%,100% { transform: translateY(0) rotate(-2deg); }
+  50%      { transform: translateY(-16px) rotate(2deg); }
+}
+@keyframes orbFloat {
+  0%,100% { transform: translate(0,0); }
+  33%      { transform: translate(20px,-20px); }
+  66%      { transform: translate(-15px,15px); }
+}
+@keyframes scrollPulse {
+  0%,100% { opacity:0.3; height:60px; }
+  50%      { opacity:1; height:80px; }
+}
+@keyframes slowRotate {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to   { transform: translate(-50%,-50%) rotate(360deg); }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  nav { padding: 16px 20px; }
+  nav.scrolled { padding: 12px 20px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 110px 24px 48px; }
+  .hero-right { min-height: 380px; padding: 20px; }
+  .hero-card { padding: 40px 24px; }
+  .hero-plant-wrap { font-size: 72px; }
+  .hero-card-title { font-size: 20px; }
+  .hero-stat-num { font-size: 28px; }
+  .section-wrap, .conditions-wrap, .why-wrap, .process-wrap, .testi-wrap, .location-wrap, .cta-wrap { padding: 64px 20px; }
+  .doctors-grid { grid-template-columns: 1fr; }
+  .conditions-grid { grid-template-columns: 1fr 1fr; }
+  .why-wrap { grid-template-columns: 1fr; gap: 48px; }
+  .process-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .process-grid::before { display: none; }
+  .location-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .cta-wrap::before { font-size: 250px; }
+  footer { padding: 48px 20px 28px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  .cursor, .cursor-ring { display: none; }
+}
 </style>
 </head>
 <body>
 
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-plant">🌿</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-text">Alshifa Clinic</div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/918347665685" class="wa-float" target="_blank" title="WhatsApp Us">💬</a>
+
 <!-- NAV -->
-<nav>
-  <div class="nav-logo">
+<nav id="nav">
+  <a href="#" class="nav-logo">
     <div class="nav-logo-icon">🌿</div>
     <div>
-      <div class="nav-logo-text">Alshifa Clinic</div>
+      <div class="nav-logo-name">Alshifa Clinic</div>
       <div class="nav-logo-sub">Veraval · Est. Care</div>
     </div>
-  </div>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#conditions">Conditions</a></li>
     <li><a href="#approach">Approach</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="https://wa.me/918347665685" class="nav-cta">Book Consult</a></li>
+    <li><a href="https://wa.me/918347665685" class="nav-cta" target="_blank">Book Consult</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg-lines"></div>
+
   <div class="hero-left">
-    <div class="hero-badge">100% Herbal · Ancient Wisdom · Modern Care</div>
-    <h1 class="hero-title">Where <em>Nature</em> Meets</h1>
-    <h1 class="hero-title-line2">Fertility.</h1>
+    <div class="hero-badge">🌿 &nbsp; 100% Herbal · Veraval · Est. Care</div>
+    <h1 class="hero-h1">
+      Where <em>Nature</em><br>
+      <strong>Meets Fertility.</strong>
+    </h1>
+    <div class="hero-line"></div>
     <p class="hero-desc">
       Rooted in centuries-old Unani & herbal medicine, Alshifa Clinic offers compassionate, natural care for women's health — from PCOS to infertility — guided by expert physicians in Veraval.
     </p>
     <div class="hero-actions">
-      <a href="https://wa.me/918347665685" class="btn-primary">Book Consultation</a>
-      <a href="#conditions" class="btn-secondary">Our Treatments</a>
+      <a href="https://wa.me/918347665685" class="btn-primary" target="_blank">
+        Book Consultation &nbsp;→
+      </a>
+      <a href="#conditions" class="btn-ghost">Explore Treatments</a>
     </div>
   </div>
 
   <div class="hero-right">
-    <div class="hero-visual">
-      <span class="hero-plant">🌿</span>
-      <p class="hero-tagline">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-card">
+      <span class="hero-plant-wrap">🌿</span>
+      <p class="hero-card-title">
         Healing that works<br>
         <span>with your body,</span><br>
         not against it.
@@ -897,52 +795,49 @@
       <div class="hero-stats">
         <div class="hero-stat">
           <span class="hero-stat-num">500+</span>
-          <span class="hero-stat-label">Cases Treated</span>
+          <span class="hero-stat-lbl">Cases Treated</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-num">2</span>
-          <span class="hero-stat-label">Expert Doctors</span>
+          <span class="hero-stat-lbl">Expert Doctors</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-num">100%</span>
-          <span class="hero-stat-label">Herbal</span>
+          <span class="hero-stat-lbl">Herbal</span>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="scroll-ind">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
 </section>
 
-<div class="divider"></div>
-
 <!-- DOCTORS -->
-<section class="section" id="about">
-  <span class="section-label">Our Physicians</span>
-  <h2 class="section-title">Meet the Experts <em>Behind</em><br>Your Healing</h2>
-
-  <div class="doctors-grid">
+<section class="section-wrap" id="about">
+  <span class="section-label reveal">Our Physicians</span>
+  <h2 class="section-title reveal">Meet the Experts <em>Behind</em><br>Your Healing</h2>
+  <div class="doctors-grid stagger">
     <div class="doctor-card">
-      <div class="doctor-icon">👩‍⚕️</div>
+      <div class="doctor-avatar">👩‍⚕️</div>
       <div class="doctor-name">Dr. Wasefa Zeri</div>
       <div class="doctor-qual">BAMS · Pune University</div>
-      <p class="doctor-spec">
-        A passionate Herbal Gynaecologist and Infertility Expert, Dr. Wasefa blends classical Unani medicine with modern diagnostic understanding to offer women a truly natural path to wellness and motherhood.
-      </p>
-      <div class="doctor-tags">
+      <p class="doctor-bio">A passionate Herbal Gynaecologist and Infertility Expert, Dr. Wasefa blends classical Unani medicine with modern diagnostic understanding to offer women a truly natural path to wellness and motherhood.</p>
+      <div class="tags">
         <span class="tag">Herbal Gynaecology</span>
         <span class="tag">Infertility</span>
         <span class="tag">PCOS</span>
         <span class="tag">Women's Wellness</span>
       </div>
     </div>
-
     <div class="doctor-card">
-      <div class="doctor-icon">👨‍⚕️</div>
+      <div class="doctor-avatar">👨‍⚕️</div>
       <div class="doctor-name">Dr. Rafik Zeri</div>
       <div class="doctor-qual">MBBS · MD</div>
-      <p class="doctor-spec">
-        With an MBBS and MD, Dr. Rafik brings rigorous clinical expertise and evidence-based medicine to Alshifa — ensuring every patient receives both the warmth of traditional care and the precision of modern diagnosis.
-      </p>
-      <div class="doctor-tags">
+      <p class="doctor-bio">With an MBBS and MD, Dr. Rafik brings rigorous clinical expertise and evidence-based medicine to Alshifa — ensuring every patient receives both the warmth of traditional care and the precision of modern diagnosis.</p>
+      <div class="tags">
         <span class="tag">General Medicine</span>
         <span class="tag">Diagnostics</span>
         <span class="tag">Hormonal Health</span>
@@ -953,190 +848,184 @@
 </section>
 
 <!-- CONDITIONS -->
-<section class="conditions-section" id="conditions">
-  <span class="section-label">What We Treat</span>
-  <h2 class="section-title">Conditions We <em>Specialise</em> In</h2>
-
-  <div class="conditions-grid">
-    <div class="condition-item">
+<section class="conditions-wrap" id="conditions">
+  <div class="conditions-bg"></div>
+  <span class="section-label reveal">What We Treat</span>
+  <h2 class="section-title reveal">Conditions We <em>Specialise</em> In</h2>
+  <div class="conditions-grid stagger">
+    <div class="condition-card">
       <span class="condition-icon">🌸</span>
       <div class="condition-name">PCOS / PCOD</div>
       <div class="condition-desc">Hormonal rebalancing through targeted herbal protocols that address root causes, not just symptoms.</div>
     </div>
-    <div class="condition-item">
+    <div class="condition-card">
       <span class="condition-icon">🌙</span>
       <div class="condition-name">Irregular Periods</div>
       <div class="condition-desc">Natural cycle regulation using time-tested Unani formulations for lasting menstrual health.</div>
     </div>
-    <div class="condition-item">
+    <div class="condition-card">
       <span class="condition-icon">🤱</span>
       <div class="condition-name">Female Infertility</div>
       <div class="condition-desc">Comprehensive herbal support for conception — results seen within 6 months of dedicated treatment.</div>
     </div>
-    <div class="condition-item">
+    <div class="condition-card">
       <span class="condition-icon">⚡</span>
       <div class="condition-name">Hormonal Imbalance</div>
       <div class="condition-desc">Addressing thyroid, estrogen & progesterone imbalances through gentle, effective herbal medicine.</div>
     </div>
-    <div class="condition-item">
+    <div class="condition-card">
       <span class="condition-icon">💧</span>
       <div class="condition-name">Leucorrhoea</div>
       <div class="condition-desc">Safe, natural treatment for vaginal discharge issues using traditional Unani therapies.</div>
     </div>
-    <div class="condition-item">
+    <div class="condition-card">
       <span class="condition-icon">🌺</span>
-      <div class="condition-name">Female Care & Wellness</div>
+      <div class="condition-name">Female Wellness</div>
       <div class="condition-desc">Holistic women's health — from puberty to menopause — with personalised herbal care plans.</div>
     </div>
   </div>
 </section>
 
 <!-- WHY US -->
-<section class="why-section" id="approach">
-  <div class="why-left">
-    <span class="section-label">The Alshifa Difference</span>
-    <h2 class="section-title">Why Patients <em>Choose</em> Us</h2>
-    <p class="why-desc">
-      At Alshifa, we don't suppress symptoms — we restore balance. Our approach is rooted in Unani wisdom, guided by scientific understanding, and centred entirely on you.
-    </p>
-    <div class="why-points">
+<section class="why-wrap" id="approach">
+  <div>
+    <span class="section-label reveal-left">The Alshifa Difference</span>
+    <h2 class="section-title reveal-left">Why Patients <em>Choose</em> Us</h2>
+    <div class="why-points stagger">
       <div class="why-point">
-        <div class="why-point-icon">🌿</div>
-        <div class="why-point-text">
+        <div class="why-icon">🌿</div>
+        <div class="why-text">
           <h4>100% Herbal — Zero Side Effects</h4>
-          <p>All our formulations are plant-based and time-tested. No harmful chemicals, no dependency.</p>
+          <p>All formulations are plant-based and time-tested. No harmful chemicals, no dependency.</p>
         </div>
       </div>
       <div class="why-point">
-        <div class="why-point-icon">🎯</div>
-        <div class="why-point-text">
+        <div class="why-icon">🎯</div>
+        <div class="why-text">
           <h4>Root Cause Treatment</h4>
-          <p>We identify and address the underlying imbalance — not just manage the surface symptoms.</p>
+          <p>We identify and address the underlying imbalance — not just manage surface symptoms.</p>
         </div>
       </div>
       <div class="why-point">
-        <div class="why-point-icon">💬</div>
-        <div class="why-point-text">
+        <div class="why-icon">💬</div>
+        <div class="why-text">
           <h4>Personal & Confidential Care</h4>
-          <p>Every consultation is private, respectful, and tailored specifically to your body and history.</p>
+          <p>Every consultation is private, respectful, and tailored specifically to your body.</p>
         </div>
       </div>
       <div class="why-point">
-        <div class="why-point-icon">📈</div>
-        <div class="why-point-text">
+        <div class="why-icon">📈</div>
+        <div class="why-text">
           <h4>Proven Results</h4>
-          <p>Hundreds of successful cases — including infertility results within 6 months of treatment.</p>
+          <p>Hundreds of successful cases — including infertility results within 6 months.</p>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="why-right">
-    <p class="why-quote">
-      Nature has a remedy for every illness. We are simply its humble guides.
-    </p>
-    <div class="why-quote-author">— The Alshifa Philosophy</div>
+  <div class="why-quote-box reveal-right">
+    <span class="big-quote">"</span>
+    <p class="quote-text">Nature has a remedy for every illness. We are simply its humble guides.</p>
+    <div class="quote-author">— The Alshifa Philosophy</div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="process-section">
-  <span class="section-label">How It Works</span>
-  <h2 class="section-title">Your Journey to <em>Wellness</em></h2>
-
-  <div class="process-steps">
+<section class="process-wrap">
+  <span class="section-label reveal">How It Works</span>
+  <h2 class="section-title reveal">Your Journey to <em>Wellness</em></h2>
+  <div class="process-grid stagger">
     <div class="process-step">
-      <div class="step-num">01</div>
+      <div class="step-circle">01</div>
       <div class="step-title">Initial Consultation</div>
       <div class="step-desc">Share your health history in a private, judgement-free conversation with our doctors.</div>
     </div>
     <div class="process-step">
-      <div class="step-num">02</div>
-      <div class="step-title">Diagnosis & Assessment</div>
+      <div class="step-circle">02</div>
+      <div class="step-title">Diagnosis</div>
       <div class="step-desc">We identify the root cause through careful examination and relevant investigations.</div>
     </div>
     <div class="process-step">
-      <div class="step-num">03</div>
-      <div class="step-title">Personalised Protocol</div>
+      <div class="step-circle">03</div>
+      <div class="step-title">Herbal Protocol</div>
       <div class="step-desc">A custom herbal treatment plan is designed specifically for your body and condition.</div>
     </div>
     <div class="process-step">
-      <div class="step-num">04</div>
+      <div class="step-circle">04</div>
       <div class="step-title">Ongoing Support</div>
-      <div class="step-desc">Regular follow-ups ensure your progress and protocol adjustments along the way.</div>
+      <div class="step-desc">Regular follow-ups ensure your progress and protocol is adjusted along the way.</div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIAL -->
-<section class="testimonial-section">
-  <span class="section-label">Patient Stories</span>
-  <div class="testimonial-stars">★★★★★</div>
-  <p class="testimonial-quote">
+<section class="testi-wrap">
+  <div class="testi-bg"></div>
+  <span class="section-label reveal">Patient Stories</span>
+  <div class="testi-stars reveal">★ ★ ★ ★ ★</div>
+  <p class="testi-quote reveal">
     "After years of failed treatments, Alshifa Clinic gave me hope — and within 6 months, I was pregnant. Dr. Wasefa's care changed my life."
   </p>
-  <div class="testimonial-author">— Patient, Veraval · Infertility Treatment</div>
+  <div class="testi-author reveal">— Patient, Veraval · Infertility Treatment</div>
 </section>
 
 <!-- LOCATION -->
-<section class="location-section" id="contact">
+<section class="location-wrap" id="contact">
   <div>
-    <span class="section-label">Find Us</span>
-    <h2 class="section-title">Visit <em>Alshifa</em><br>Clinic</h2>
-    <div class="location-details">
-      <div class="location-item">
-        <div class="location-item-icon">📍</div>
-        <div class="location-item-text">
-          <h4>Location</h4>
-          <p>Veraval, Gujarat, India</p>
+    <span class="section-label reveal-left">Find Us</span>
+    <h2 class="section-title reveal-left">Visit <em>Alshifa</em><br>Clinic</h2>
+    <div class="location-items stagger">
+      <div class="loc-item">
+        <div class="loc-icon">📍</div>
+        <div>
+          <div class="loc-label">Location</div>
+          <div class="loc-val">Veraval, Gujarat, India</div>
         </div>
       </div>
-      <div class="location-item">
-        <div class="location-item-icon">📞</div>
-        <div class="location-item-text">
-          <h4>Book Appointment</h4>
-          <p>DM on Instagram or WhatsApp</p>
+      <div class="loc-item">
+        <div class="loc-icon">📞</div>
+        <div>
+          <div class="loc-label">WhatsApp</div>
+          <div class="loc-val">+91 83476 65685</div>
         </div>
       </div>
-      <div class="location-item">
-        <div class="location-item-icon">🕐</div>
-        <div class="location-item-text">
-          <h4>Consultation</h4>
-          <p>In-clinic & Online Available</p>
+      <div class="loc-item">
+        <div class="loc-icon">📸</div>
+        <div>
+          <div class="loc-label">Instagram</div>
+          <div class="loc-val">@dr.wasefa</div>
         </div>
       </div>
-      <div class="location-item">
-        <div class="location-item-icon">🌿</div>
-        <div class="location-item-text">
-          <h4>Speciality</h4>
-          <p>Herbal Gynaecology · Infertility · PCOS</p>
+      <div class="loc-item">
+        <div class="loc-icon">🕐</div>
+        <div>
+          <div class="loc-label">Consultation</div>
+          <div class="loc-val">In-clinic & Online Available</div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="map-placeholder">
-    <div class="map-pin">📍</div>
-    <div class="map-text">Alshifa Clinic</div>
-    <div class="map-city">Veraval · Gujarat</div>
+  <div class="map-box reveal-right">
+    <div class="map-pin-icon">📍</div>
+    <div class="map-clinic">Alshifa Clinic</div>
+    <div class="map-city-name">Veraval · Gujarat</div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
-  <h2 class="cta-title">Begin Your<br><em>Healing Journey</em> Today</h2>
-  <p class="cta-subtitle">Compassionate, natural care — available in-clinic and online.</p>
-  <div class="cta-buttons">
-    <a href="https://wa.me/918347665685" class="btn-gold">WhatsApp Us</a>
-    <a href="https://instagram.com/dr.wasefa" class="btn-outline-white">Instagram DM</a>
+<section class="cta-wrap">
+  <h2 class="cta-title reveal">Begin Your<br><em>Healing Journey</em> Today</h2>
+  <p class="cta-sub reveal">Compassionate, natural care — available in-clinic and online.</p>
+  <div class="cta-btns reveal">
+    <a href="https://wa.me/918347665685" class="btn-gold" target="_blank">💬 &nbsp; WhatsApp Us</a>
+    <a href="https://instagram.com/dr.wasefa" class="btn-outline" target="_blank">📸 &nbsp; Instagram DM</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
+  <div class="footer-grid">
     <div>
-      <div class="footer-brand-name">Alshifa Clinic</div>
+      <div class="footer-brand">Alshifa Clinic</div>
       <div class="footer-brand-tag">Herbal Infertility & Female Care</div>
       <p class="footer-brand-desc">Rooted in Unani tradition, guided by science — Alshifa offers women a natural path to health, balance, and motherhood.</p>
     </div>
@@ -1153,18 +1042,102 @@
     <div class="footer-col">
       <h5>Connect</h5>
       <ul>
-        <li><a href="https://instagram.com/dr.wasefa">Instagram</a></li>
-        <li><a href="https://wa.me/918347665685">WhatsApp</a></li>
-        <li><a href="#">Book Consult</a></li>
+        <li><a href="https://instagram.com/dr.wasefa" target="_blank">Instagram @dr.wasefa</a></li>
+        <li><a href="https://wa.me/918347665685" target="_blank">WhatsApp Us</a></li>
+        <li><a href="https://wa.me/918347665685" target="_blank">Book Consult</a></li>
         <li><a href="#">Veraval, Gujarat</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2024 Alshifa Clinic · Dr. Wasefa Zeri · Dr. Rafik Zeri · All rights reserved</div>
-    <div class="footer-tagline">Nature heals. We guide.</div>
+    <div class="footer-copy">© 2026 Alshifa Clinic · Dr. Wasefa Zeri · Dr. Rafik Zeri · All rights reserved</div>
+    <div class="footer-phi">Nature heals. We guide.</div>
   </div>
 </footer>
 
+<script>
+// ── LOADER ──
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    loader.style.transition = 'opacity 0.7s ease, visibility 0.7s';
+    loader.style.opacity = '0';
+    loader.style.visibility = 'hidden';
+  }, 1900);
+});
+
+// ── CURSOR ──
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursorRing');
+let mx=0, my=0, rx=0, ry=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+function animateCursor() {
+  cursor.style.left = mx+'px'; cursor.style.top = my+'px';
+  rx += (mx-rx)*0.12; ry += (my-ry)*0.12;
+  ring.style.left = rx+'px'; ring.style.top = ry+'px';
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+document.querySelectorAll('a,button').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursor.style.width='18px'; cursor.style.height='18px'; ring.style.width='54px'; ring.style.height='54px'; });
+  el.addEventListener('mouseleave', () => { cursor.style.width='10px'; cursor.style.height='10px'; ring.style.width='36px'; ring.style.height='36px'; });
+});
+
+// ── NAV SCROLL ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── INTERSECTION OBSERVER ──
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+
+// ── COUNTER ANIMATION ──
+function animateCounter(el, target, suffix='') {
+  let start = 0;
+  const duration = 1800;
+  const step = timestamp => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(ease * target) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const nums = entry.target.querySelectorAll('.hero-stat-num');
+      nums.forEach(n => {
+        const txt = n.textContent;
+        if (txt.includes('500')) animateCounter(n, 500, '+');
+        else if (txt.includes('2')) animateCounter(n, 2, '');
+        else if (txt.includes('100')) animateCounter(n, 100, '%');
+      });
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) statsObserver.observe(heroStats);
+
+// ── PARALLAX HERO ──
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const heroLeft = document.querySelector('.hero-left');
+  if (heroLeft && scrollY < window.innerHeight) {
+    heroLeft.style.transform = `translateY(${scrollY * 0.18}px)`;
+  }
+});
+</script>
 </body>
 </html>
